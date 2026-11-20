@@ -125,5 +125,8 @@ subjects/<NomeMateria>/source/appunti_grezzi.pdf
 ### 2. Avvia la sessione in chat
 Apri la conversazione con l'assistente AI. Al primo avvio, il tutor presenterà le funzionalità della suite e raccoglierà i 4 parametri di calibrazione (**Nome Esame**, **Data Appello**, **Voto Obiettivo**, **Blocco di Pagine iniziale**), eseguendo automaticamente lo scaffolding tramite `init_subject.ps1`.
 
+### 2. Ingestione Intelligente & Limite di Sicurezza (20–30 Pagine)
+Per garantire la massima precisione analitica ed evitare la saturazione della memoria o del contesto visivo, il sistema adotta una **regola tassativa di modularità**: è vietato elaborare più di 30 pagine in una singola sessione. I corsi e le dispense estese (100–300 pagine) vengono sempre suddivisi ed elaborati in blocchi da **20–30 pagine massimo** (intervallo consigliato: 15–25 pagine per capitolo). Lo script `extract_pages.ps1` blocca automaticamente richieste superiori a 30 pagine.
+
 ### 3. Studia, Ripeti e Verifica
 Consulta i PDF generati nella cartella `subjects/<NomeMateria>/`, studia il capitolo e utilizza i comandi vocali e i quiz interattivi per consolidare la preparazione fino al giorno dell'appello.

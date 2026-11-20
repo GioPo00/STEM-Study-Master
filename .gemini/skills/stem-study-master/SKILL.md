@@ -170,6 +170,8 @@ powershell -ExecutionPolicy Bypass -File ".gemini/skills/stem-study-master/scrip
 ```
 
 ### 2. Ingestione Intelligente della Sorgente (`extract_pages.ps1`)
+* **Regola Tassativa sulla Granularità dei Blocchi (Limite 20–30 Pagine):**  
+  È fatto divieto assoluto di estrarre o elaborare dispense intere o blocchi superiori a 30 pagine in un'unica sessione. Se l'utente richiede di elaborare un PDF esteso (es. 100–150 pagine), l'AI suddivide proattivamente il materiale in capitoli o blocchi modulari da **20–30 pagine massimo** (intervallo ottimale: 15–25 pp.). Lo script `extract_pages.ps1` include un blocco di sicurezza che rifiuta estrazioni superiori a 30 pagine per evitare saturazione di memoria e perdita di precisione analitica.
 * **Pagine Digitali Pure:** L'assistente legge direttamente il flusso testuale e matematico con `read_file`.
 * **Pagine Scansionate o Ibride:** Renderizza l'intervallo di pagine in PNG ad alta definizione (1400px larghezza) in `subjects/<Materia>/temp_raw/`:
 ```powershell

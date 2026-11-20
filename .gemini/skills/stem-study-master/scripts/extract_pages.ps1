@@ -52,6 +52,13 @@ $resolvedOut = (Resolve-Path $OutDir).Path
 $opFolder = [Windows.Storage.StorageFolder]::GetFolderFromPathAsync($resolvedOut)
 $folder = Await $opFolder ([Windows.Storage.StorageFolder])
 
+# Limite massimo di sicurezza per sessione (previene saturazione memoria e crash del contesto visivo)
+$requestedCount = $EndPage - $StartPage + 1
+if ($requestedCount -gt 30) {
+    Write-Error "ERRORE DI SICUREZZA: Richiesta estrazione di $requestedCount pagine (da $StartPage a $EndPage). Il limite massimo consentito per sessione e' di 20-30 pagine per garantire massima precisione analitica e non saturare la memoria. Suddividere il PDF in blocchi/capitoli modulari (es. StartPage: $StartPage, EndPage: $($StartPage + 24))."
+    exit 1
+}
+
 $firstIdx = [Math]::Max(0, $StartPage - 1)
 $lastIdx = [Math]::Min($doc.PageCount - 1, $EndPage - 1)
 
