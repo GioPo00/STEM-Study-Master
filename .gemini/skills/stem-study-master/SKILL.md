@@ -4,6 +4,8 @@ description: >-
   Framework ingegneristico Versione 1.0 per la preparazione e verbalizzazione di esami universitari STEM su Windows.
   Compila appunti grezzi in suite PDF editoriali (Typst), guida l'esposizione orale sull'impronta vocale,
   gestisce la memoria evolutiva delle ripetizioni, simulazioni d'esame con disegno a mano e quiz interattivi con widget in tempo reale.
+  Attivare questa skill quando l'utente menziona lo studio, la preparazione o la verbalizzazione di un esame,
+  oppure quando chiede di elaborare dispense, appunti manoscritti o di fare quiz e ripetizioni orali.
 ---
 
 # STEM Study Master — Sistema Operativo di Studio & Verbalizzazione Orale (Versione 1.0)
@@ -161,7 +163,8 @@ Durante il corso delle settimane, l'utente potrebbe non ricordare tutte le poten
 ## ⚙️ Protocolli Operativi & Script PowerShell
 
 ### 1. Scaffolding Automatico Nuova Materia (`init_subject.ps1`)
-Istanzia l'albero delle directory, copia `macros.typ`, crea `study_state.json` e `oral_tracker.json` (in formato UTF-8 No BOM), configura i 3 documenti master Typst e compila la prima versione della Dashboard `_VERIFICA_PROGRESSO.pdf`:
+Istanzia l'albero delle directory, copia `macros.typ`, crea `study_state.json` e `oral_tracker.json` (in formato UTF-8 No BOM), configura i 3 documenti master Typst e compila la prima versione della Dashboard `_VERIFICA_PROGRESSO.pdf`.  
+*(Nota operativa: su ambiente Windows con restrizioni di sandbox, eseguire il comando con elevazione/permessi completi `BypassSandbox: true` per consentire la creazione della nuova alberatura in `subjects/`)*:
 ```powershell
 powershell -ExecutionPolicy Bypass -File ".gemini/skills/stem-study-master/scripts/init_subject.ps1" -SubjectName "<NomeMateria>" -TotalPages <PagineTotali> -ExamDate "<DataAppello>" -TargetGrade "<VotoObiettivo>"
 ```
