@@ -1,0 +1,26 @@
+# ==========================================
+# .gitignore — STEM Study Master (v1.0)
+# ==========================================
+
+# Cartelle di lavoro provvisorie (buffer estrazione WinRT)
+subjects/*/temp_raw/
+
+# File sorgenti e PDF generati delle materie personali
+# (Permette di mantenere la cartella subjects/ tracciata senza caricare appunti privati)
+subjects/*/source/*
+subjects/*/assets/*
+subjects/*/src/*
+subjects/*/*.typ
+subjects/*/*.pdf
+subjects/*/*.json
+!subjects/.gitkeep
+!subjects/*/src/macros.typ
+
+# File di sistema e log locali
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Output temporanei Typst locali
+*.pdf.tmp

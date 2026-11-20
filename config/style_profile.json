@@ -1,0 +1,27 @@
+{
+  "user_name": "Studente",
+  "version": "1.0",
+  "last_updated": "2026-11-20",
+  "calibration_status": "uncalibrated",
+  "oral_style": {
+    "structure": "concatenazione causa-effetto",
+    "tone": "rigoroso, essenziale, formale",
+    "cadence": "inquadramento del fenomeno -> spiegazione fisica/analitica -> formulazione matematica -> conseguenze applicative",
+    "mathematical_notation": "notazione scientifica pura senza trascrizioni parlate",
+    "whiteboard_guidance": "box operativi descrittivi per il tracciamento a mano",
+    "visual_elements": "zero immagini incorporate nel documento orale",
+    "preferred_connectors": [
+      "In corrispondenza del quale...",
+      "Dà origine a...",
+      "Posto che...",
+      "Possiamo pertanto affermare che...",
+      "A tal fine introduciamo...",
+      "Ne consegue che l'ipotesi..."
+    ]
+  },
+  "feedback_preferences": {
+    "style": "giudizio tecnico, sincero e costruttivo privo di griglie fittizie",
+    "checkpoints": "invito al termine del capitolo alla verifica attiva",
+    "error_tracking": "aggiornamento automatico della dashboard e del quaderno degli errori"
+  }
+}
