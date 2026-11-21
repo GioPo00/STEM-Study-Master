@@ -103,14 +103,17 @@ stem-study-master/
 
 Il sistema rispetta i tempi cognitivi dello studio universitario: l'assistente elabora i documenti di studio ed esposizione, lascia allo studente il tempo di studiare in autonomia e attiva le verifiche su richiesta esplicita, proponendo proattivamente il passo metodologico più efficace.
 
-1. **`«Valuta esposizione»` (Memoria Evolutiva & Filtro Fonetico):**  
-   Lo studente invia la trascrizione della propria ripetizione vocale. Il sistema filtra automaticamente gli artefatti di dettatura (*Speech-to-Text Normalizer*), confronta la prova con `oral_tracker.json`, evidenzia progressi e omissioni, distingue i tagli intenzionali e conclude con **2–3 domande aperte da docente**.
-2. **`«Fammi il quiz sul Capitolo X»` (Widget Interattivo in Tempo Reale):**  
-   Il quiz viene somministrato tramite widget grafico interattivo (`ask_question`) selezionabile con clic del mouse o frecce della tastiera, senza digitare lettere in chat. I quesiti sono erogati uno alla volta con opzioni neutre e randomizzate, feedback analitico immediato dopo ogni risposta e **ricompilazione istantanea** di `<MATERIA>_VERIFICA_PROGRESSO.pdf` al termine dell'ultima domanda.
-3. **`«Simula esame»`:**  
-   Interrogazione trasversale tra più capitoli in cui lo studente espone la teoria descrivendo a voce ciò che disegna sul foglio bianco.
-4. **Protocollo di Chiarimento a 3 Livelli (*«Non ho capito questo passaggio...»*):**  
-   Spiegazione progressiva in chat strutturata in: (1) *Intuizione Fisica & Immagine Mentale*, (2) *Meccanica del Processo*, (3) *Raccordo Matematico*, integrabile a richiesta nel PDF di studio.
+### Disambiguazione dei Canali di Verifica
+| Comando Consigliato | Intento Didattico | Canale di Erogazione |
+| :--- | :--- | :--- |
+| `«Quiz: [Argomento]»` o `«Test»` | Verifica rapida a risposta multipla | **Widget interattivo `ask_question`** (selezione a clic/frecce, zero testo in chat) |
+| `«Interrogami su [Argomento]»` | Simulazione colloquio d'esame | **Chat testuale** (1 domanda aperta concettuale da argomentare verbalmente) |
+| `«Valuta esposizione»` | Verifica ripetizione ad alta voce | **Analisi fonetica + memoria evolutiva** (`oral_tracker.json`) |
+| `«Simula esame»` | Esame trasversale completo | **Chat + Foglio bianco** (disegno coordinate e grafici sul foglio) |
+| `«Non ho capito questo passaggio...»` | Chiarimento progressivo | **Protocollo a 3 livelli** (Intuizione fisica $\to$ Meccanica $\to$ Raccordo matematico) |
+
+> ⚠️ **Zero-Tolerance sui Quiz Testuali in Chat:**  
+> Il sistema non genera mai elenchi di quiz o domande a crocette sotto forma di testo o Markdown nella chat. Qualsiasi richiesta di quiz o test attiva immediatamente ed esclusivamente il widget grafico interattivo (`ask_question`), con erogazione 1-a-1, feedback immediato dopo ogni risposta e aggiornamento automatico del PDF `_VERIFICA_PROGRESSO.pdf` al termine.
 
 ---
 
