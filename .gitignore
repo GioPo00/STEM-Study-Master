@@ -7,14 +7,8 @@ subjects/*/temp_raw/
 
 # File sorgenti e PDF generati delle materie personali
 # (Permette di mantenere la cartella subjects/ tracciata senza caricare appunti privati)
-subjects/*/source/*
-subjects/*/assets/*
-subjects/*/src/*
-subjects/*/*.typ
-subjects/*/*.pdf
-subjects/*/*.json
+subjects/*
 !subjects/.gitkeep
-!subjects/*/src/macros.typ
 
 # File di sistema e log locali
 *.log
